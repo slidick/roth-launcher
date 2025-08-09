@@ -1,0 +1,2139 @@
+[gd_scene load_steps=7 format=3 uid="uid://2pgkmy7djuv4"]
+
+[ext_resource type="Script" uid="uid://y1qwqqii8yoo" path="res://src/components/controls_page.gd" id="1_0g644"]
+[ext_resource type="Theme" uid="uid://03q268pfdt2r" path="res://src/themes/font_theme.tres" id="1_k14rc"]
+[ext_resource type="StyleBox" uid="uid://cng0tn6rye20e" path="res://src/themes/panel_theme.tres" id="3_mgk11"]
+[ext_resource type="Texture2D" uid="uid://ddliv8lgnpu2" path="res://assets/tabler/tabler--exclamation-circle.svg" id="4_p0h72"]
+[ext_resource type="StyleBox" uid="uid://da8j11csyu4b7" path="res://src/themes/popup_panel_theme.tres" id="5_nvmwd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgk11"]
+bg_color = Color(0.1, 0.1, 0.1, 0.7)
+expand_margin_left = 50.0
+expand_margin_top = 50.0
+expand_margin_right = 50.0
+expand_margin_bottom = 50.0
+
+[node name="ControlsPage" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_k14rc")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_0g644")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_mgk11")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+text = "Reset to Default"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Basic Controls" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Move Forward:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="move_forward" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/move_forward"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Move Backward:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="move_backward" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/move_backward"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Strafe Left:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="strafe_left" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3/strafe_left"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Strafe Right:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="strafe_right" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4/strafe_right"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Turn Left:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="turn_left" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer5/turn_left"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Turn Right: "
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="turn_right" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/turn_right"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Look Up:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="look_up" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/look_up"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Look Down:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="look_down" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/look_down"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Tilt Up:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="tilt_up" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/tilt_up"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Tilt Down:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="tilt_down" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10/tilt_down"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Jump:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="jump" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer/jump"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Crouch:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="crouch" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/crouch"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attack:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="attack" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer3/attack"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer3"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Inventory:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="inventory" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer4/inventory"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer4"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Toggle Run:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="toggle_run" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer5"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer5/toggle_run"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer5"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Unarmed:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="unarmed" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer8"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer8/unarmed"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer8"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quickslot 1:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="quickslot_1" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer9"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer9/quickslot_1"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer9"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quickslot 2:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="quickslot_2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer10"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer10/quickslot_2"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer10"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quickslot 3:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="quickslot_3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer11"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer11/quickslot_3"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer11"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quickslot 4:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="quickslot_4" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer12"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer12/quickslot_4"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer12"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer13" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer13"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quickslot 5:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="quickslot_5" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer13"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer13/quickslot_5"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer13"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer13"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer"]
+layout_mode = 2
+
+[node name="ChangeAllButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(140, 48)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Change All"
+
+[node name="Advanced Controls" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quicksave:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="quicksave" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/quicksave"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quickload:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="quickload" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/quickload"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Escape:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="escape" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/escape"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Enter:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="enter" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/enter"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hide Weapon:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="hide_weapon" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer11"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer11/hide_weapon"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Toggle Subtitles:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="toggle_subtitles" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer12"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer12/toggle_subtitles"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer13" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Toggle
+Adventure Mode:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="toggle_adventure_mode" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer13"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer13/toggle_adventure_mode"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer17" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer17"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Main Menu:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="main_menu" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer17"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer17/main_menu"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer17"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer17"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer19" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer19"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Examine /
+Reload after Death:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="reload_after_death" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer19"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer19/reload_after_death"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer19"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer19"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer20" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hold for Run"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="hold_run_info" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20/HBoxContainer"]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+texture = ExtResource("4_p0h72")
+stretch_mode = 5
+
+[node name="hold_run_info_panel" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20/HBoxContainer/hold_run_info"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -159.0
+offset_top = 34.0
+offset_right = 117.0
+offset_bottom = 75.0
+theme_override_styles/panel = ExtResource("5_nvmwd")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20/HBoxContainer/hold_run_info/hold_run_info_panel"]
+layout_mode = 2
+text = "BUG: Only works while crouched."
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20/HBoxContainer"]
+layout_mode = 2
+text = ":"
+
+[node name="hold_run" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20/hold_run"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Increase Gamma:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="increase_gamma" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer9"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer9/increase_gamma"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer9"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Decrease Gamma:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="decrease_gamma" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer10"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer10/decrease_gamma"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer10"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer14" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer14"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Increase Viewport:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="increase_viewport" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer14"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer14/increase_viewport"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer14"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer14"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer15" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer15"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Decrease Viewport:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="decrease_viewport" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer15"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer15/decrease_viewport"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer15"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer15"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer16" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer16"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Redraw Screen:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="redraw_screen" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer16"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer16/redraw_screen"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer16"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer16"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer18" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer18"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Toggle Textures:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="toggle_textures" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer18"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer18/toggle_textures"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer18"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer18"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer21" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer21"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Toggle Mouse Buttons:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="toggle_mouse_buttons" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer21"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer21/toggle_mouse_buttons"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer21"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer21"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer22" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer22"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Display Version:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="display_version" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer22"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer22/display_version"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer22"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer22"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer"]
+layout_mode = 2
+
+[node name="ChangeAllAdvancedButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(140, 48)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Change All"
+
+[node name="DosBox Controls" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Toggle Fullscreen:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="toggle_fullscreen" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/toggle_fullscreen"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Capture Mouse:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="capture_mouse" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10/capture_mouse"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cycles Up:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="cycles_up" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/cycles_up"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cycles Down:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="cycles_down" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/cycles_down"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Debugger:"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="debugger" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 0
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/debugger"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.565382, 0.436127, 0.398421, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+text = "Change"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "Add"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer"]
+layout_mode = 2
+
+[node name="ChangeAllDosBoxButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(140, 48)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Change All"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Menu"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Select RotH Installation Directory"
+initial_position = 2
+size = Vector2i(656, 480)
+ok_button_text = "Select Current Folder"
+mode_overrides_title = false
+file_mode = 2
+access = 2
+use_native_dialog = true
+
+[node name="KeyInputPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mgk11")
+
+[node name="PanelContainer" type="PanelContainer" parent="KeyInputPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -30.0
+offset_right = 117.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_nvmwd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KeyInputPanel/PanelContainer"]
+layout_mode = 2
+
+[node name="ChangingKeyLabel" type="Label" parent="KeyInputPanel/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Move Forward"
+horizontal_alignment = 1
+
+[node name="KeyEdit" type="LineEdit" parent="KeyInputPanel/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Waiting for key press..."
+alignment = 1
+editable = false
+expand_to_text_length = true
+context_menu_enabled = false
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+unique_name_in_owner = true
+item_count = 1
+item_0/text = "Clear"
+item_0/id = 0
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/move_forward" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed" binds= ["move_forward"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_pressed" binds= ["move_forward", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/move_backward" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_pressed" binds= ["move_backward"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Button2" to="." method="_on_button_pressed" binds= ["move_backward", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3/strafe_left" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3/Button" to="." method="_on_button_pressed" binds= ["strafe_left"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer3/Button2" to="." method="_on_button_pressed" binds= ["strafe_left", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4/strafe_right" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4/Button" to="." method="_on_button_pressed" binds= ["strafe_right"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4/Button2" to="." method="_on_button_pressed" binds= ["strafe_right", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer5/turn_left" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer5/Button" to="." method="_on_button_pressed" binds= ["turn_left"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer5/Button2" to="." method="_on_button_pressed" binds= ["turn_left", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/turn_right" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/Button" to="." method="_on_button_pressed" binds= ["turn_right"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/Button2" to="." method="_on_button_pressed" binds= ["turn_right", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/look_up" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/Button" to="." method="_on_button_pressed" binds= ["look_up"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/Button2" to="." method="_on_button_pressed" binds= ["look_up", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/look_down" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/Button" to="." method="_on_button_pressed" binds= ["look_down"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/Button2" to="." method="_on_button_pressed" binds= ["look_down", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/tilt_up" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/Button" to="." method="_on_button_pressed" binds= ["tilt_up"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/Button2" to="." method="_on_button_pressed" binds= ["tilt_up", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10/tilt_down" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10/Button" to="." method="_on_button_pressed" binds= ["tilt_down"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10/Button2" to="." method="_on_button_pressed" binds= ["tilt_down", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer/jump" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer/Button" to="." method="_on_button_pressed" binds= ["jump"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer/Button2" to="." method="_on_button_pressed" binds= ["jump", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/crouch" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/Button" to="." method="_on_button_pressed" binds= ["crouch"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/Button2" to="." method="_on_button_pressed" binds= ["crouch", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer3/attack" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer3/Button" to="." method="_on_button_pressed" binds= ["attack"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer3/Button2" to="." method="_on_button_pressed" binds= ["attack", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer4/inventory" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer4/Button" to="." method="_on_button_pressed" binds= ["inventory"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer4/Button2" to="." method="_on_button_pressed" binds= ["inventory", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer5/toggle_run" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer5/Button" to="." method="_on_button_pressed" binds= ["toggle_run"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer5/Button2" to="." method="_on_button_pressed" binds= ["toggle_run", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer8/unarmed" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer8/Button" to="." method="_on_button_pressed" binds= ["unarmed"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer8/Button2" to="." method="_on_button_pressed" binds= ["unarmed", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer9/quickslot_1" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer9/Button" to="." method="_on_button_pressed" binds= ["quickslot_1"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer9/Button2" to="." method="_on_button_pressed" binds= ["quickslot_1", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer10/quickslot_2" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer10/Button" to="." method="_on_button_pressed" binds= ["quickslot_2"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer10/Button2" to="." method="_on_button_pressed" binds= ["quickslot_2", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer11/quickslot_3" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer11/Button" to="." method="_on_button_pressed" binds= ["quickslot_3"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer11/Button2" to="." method="_on_button_pressed" binds= ["quickslot_3", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer12/quickslot_4" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer12/Button" to="." method="_on_button_pressed" binds= ["quickslot_4"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer12/Button2" to="." method="_on_button_pressed" binds= ["quickslot_4", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer13/quickslot_5" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer13/Button" to="." method="_on_button_pressed" binds= ["quickslot_5"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer13/Button2" to="." method="_on_button_pressed" binds= ["quickslot_5", true]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Basic Controls/VBoxContainer/HBoxContainer2/ChangeAllButton" to="." method="_on_change_all_button_pressed"]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/quicksave" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/Button" to="." method="_on_button_pressed" binds= ["quicksave"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/Button2" to="." method="_on_button_pressed" binds= ["quicksave", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/quickload" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/Button" to="." method="_on_button_pressed" binds= ["quickload"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/Button2" to="." method="_on_button_pressed" binds= ["quickload", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/escape" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/Button" to="." method="_on_button_pressed" binds= ["escape"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/Button2" to="." method="_on_button_pressed" binds= ["escape", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/enter" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/Button" to="." method="_on_button_pressed" binds= ["enter"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/Button2" to="." method="_on_button_pressed" binds= ["enter", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer11/hide_weapon" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer11/Button" to="." method="_on_button_pressed" binds= ["hide_weapon"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer11/Button2" to="." method="_on_button_pressed" binds= ["hide_weapon", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer12/toggle_subtitles" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer12/Button" to="." method="_on_button_pressed" binds= ["toggle_subtitles"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer12/Button2" to="." method="_on_button_pressed" binds= ["toggle_subtitles", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer13/toggle_adventure_mode" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer13/Button" to="." method="_on_button_pressed" binds= ["toggle_adventure_mode"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer13/Button2" to="." method="_on_button_pressed" binds= ["toggle_adventure_mode", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer17/main_menu" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer17/Button" to="." method="_on_button_pressed" binds= ["main_menu"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer17/Button2" to="." method="_on_button_pressed" binds= ["main_menu", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer19/reload_after_death" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer19/Button" to="." method="_on_button_pressed" binds= ["reload_after_death"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer19/Button2" to="." method="_on_button_pressed" binds= ["reload_after_death", true]]
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20/HBoxContainer/hold_run_info" to="." method="_on_hold_run_info_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20/HBoxContainer/hold_run_info" to="." method="_on_hold_run_info_mouse_exited"]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20/hold_run" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20/Button" to="." method="_on_button_pressed" binds= ["hold_run"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer20/Button2" to="." method="_on_button_pressed" binds= ["hold_run", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer9/increase_gamma" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer9/Button" to="." method="_on_button_pressed" binds= ["increase_gamma"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer9/Button2" to="." method="_on_button_pressed" binds= ["increase_gamma", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer10/decrease_gamma" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer10/Button" to="." method="_on_button_pressed" binds= ["decrease_gamma"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer10/Button2" to="." method="_on_button_pressed" binds= ["decrease_gamma", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer14/increase_viewport" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer14/Button" to="." method="_on_button_pressed" binds= ["increase_viewport"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer14/Button2" to="." method="_on_button_pressed" binds= ["increase_viewport", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer15/decrease_viewport" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer15/Button" to="." method="_on_button_pressed" binds= ["decrease_viewport"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer15/Button2" to="." method="_on_button_pressed" binds= ["decrease_viewport", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer16/redraw_screen" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer16/Button" to="." method="_on_button_pressed" binds= ["redraw_screen"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer16/Button2" to="." method="_on_button_pressed" binds= ["redraw_screen", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer18/toggle_textures" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer18/Button" to="." method="_on_button_pressed" binds= ["toggle_textures"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer18/Button2" to="." method="_on_button_pressed" binds= ["toggle_textures", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer21/toggle_mouse_buttons" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer21/Button" to="." method="_on_button_pressed" binds= ["toggle_mouse_buttons"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer21/Button2" to="." method="_on_button_pressed" binds= ["toggle_mouse_buttons", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer22/display_version" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer22/Button" to="." method="_on_button_pressed" binds= ["display_version"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer22/Button2" to="." method="_on_button_pressed" binds= ["display_version", true]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/Advanced Controls/VBoxContainer/HBoxContainer2/ChangeAllAdvancedButton" to="." method="_on_change_all_advanced_button_pressed"]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/toggle_fullscreen" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/Button" to="." method="_on_button_pressed" binds= ["toggle_fullscreen"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer6/Button2" to="." method="_on_button_pressed" binds= ["toggle_fullscreen", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10/capture_mouse" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10/Button" to="." method="_on_button_pressed" binds= ["capture_mouse"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer10/Button2" to="." method="_on_button_pressed" binds= ["capture_mouse", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/cycles_up" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/Button" to="." method="_on_button_pressed" binds= ["cycles_up"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer7/Button2" to="." method="_on_button_pressed" binds= ["cycles_up", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/cycles_down" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/Button" to="." method="_on_button_pressed" binds= ["cycles_down"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer8/Button2" to="." method="_on_button_pressed" binds= ["cycles_down", true]]
+[connection signal="gui_input" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/debugger" to="." method="_on_label_gui_input"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/Button" to="." method="_on_button_pressed" binds= ["debugger"]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer9/Button2" to="." method="_on_button_pressed" binds= ["debugger", true]]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/TabContainer/DosBox Controls/VBoxContainer/HBoxContainer2/ChangeAllDosBoxButton" to="." method="_on_change_all_dos_box_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="gui_input" from="KeyInputPanel/PanelContainer/VBoxContainer/KeyEdit" to="." method="_on_key_edit_gui_input"]
+[connection signal="index_pressed" from="PopupMenu" to="." method="_on_popup_menu_index_pressed"]

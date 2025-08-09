@@ -1,0 +1,296 @@
+[gd_scene load_steps=4 format=3 uid="uid://rvhloowgaapg"]
+
+[ext_resource type="Theme" uid="uid://03q268pfdt2r" path="res://src/themes/font_theme.tres" id="1_3ci2d"]
+[ext_resource type="Script" uid="uid://v5iptdhae3tf" path="res://src/components/settings_page.gd" id="1_7k1ew"]
+[ext_resource type="StyleBox" uid="uid://cng0tn6rye20e" path="res://src/themes/panel_theme.tres" id="2_3hjnq"]
+
+[node name="SettingsPage" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3ci2d")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_7k1ew")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_3hjnq")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Dosbox Settings"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Fullscreen:"
+horizontal_alignment = 2
+
+[node name="FullscreenCheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Fullscreen Double Buffering:"
+horizontal_alignment = 2
+
+[node name="FulldoubleCheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Fullscreen Resolution:"
+horizontal_alignment = 2
+
+[node name="FullResolutionOption" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+selected = 7
+item_count = 8
+popup/item_0/text = "640x480"
+popup/item_0/id = 0
+popup/item_1/text = "800x600"
+popup/item_1/id = 1
+popup/item_2/text = "1024x768"
+popup/item_2/id = 2
+popup/item_3/text = "1152x864"
+popup/item_3/id = 3
+popup/item_4/text = "1280x960"
+popup/item_4/id = 4
+popup/item_5/text = "1400x1050"
+popup/item_5/id = 5
+popup/item_6/text = "1600x1200"
+popup/item_6/id = 6
+popup/item_7/text = "Desktop"
+popup/item_7/id = 7
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Window Resolution:"
+horizontal_alignment = 2
+
+[node name="WindowResolutionOption" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+selected = 2
+item_count = 7
+popup/item_0/text = "640x480"
+popup/item_0/id = 0
+popup/item_1/text = "800x600"
+popup/item_1/id = 1
+popup/item_2/text = "1024x768"
+popup/item_2/id = 2
+popup/item_3/text = "1152x864"
+popup/item_3/id = 3
+popup/item_4/text = "1280x960"
+popup/item_4/id = 4
+popup/item_5/text = "1400x1050"
+popup/item_5/id = 5
+popup/item_6/text = "1600x1200"
+popup/item_6/id = 6
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Output:"
+horizontal_alignment = 2
+
+[node name="OutputOption" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+selected = 2
+item_count = 5
+popup/item_0/text = "Overlay"
+popup/item_0/id = 1
+popup/item_1/text = "OpenGL"
+popup/item_1/id = 2
+popup/item_2/text = "OpenGLnb"
+popup/item_2/id = 3
+popup/item_3/text = "DDraw"
+popup/item_3/id = 4
+popup/item_4/text = "Surface"
+popup/item_4/id = 4
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Mouse Autolock:"
+horizontal_alignment = 2
+
+[node name="AutolockCheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Scaler:"
+horizontal_alignment = 2
+
+[node name="ScalerOption" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+selected = 1
+item_count = 18
+popup/item_0/text = "none"
+popup/item_0/id = 1
+popup/item_1/text = "normal2x"
+popup/item_1/id = 2
+popup/item_2/text = "normal3x"
+popup/item_2/id = 3
+popup/item_3/text = "advmame2x"
+popup/item_3/id = 4
+popup/item_4/text = "advmame3x"
+popup/item_4/id = 4
+popup/item_5/text = "hq2x"
+popup/item_5/id = 5
+popup/item_6/text = "hq3x"
+popup/item_6/id = 6
+popup/item_7/text = "2xsai"
+popup/item_7/id = 7
+popup/item_8/text = "super2xsai"
+popup/item_8/id = 8
+popup/item_9/text = "supereagle"
+popup/item_9/id = 9
+popup/item_10/text = "advinterp2x"
+popup/item_10/id = 10
+popup/item_11/text = "advinterp3x"
+popup/item_11/id = 11
+popup/item_12/text = "tv2x"
+popup/item_12/id = 12
+popup/item_13/text = "tv3x"
+popup/item_13/id = 13
+popup/item_14/text = "rgb2x"
+popup/item_14/id = 14
+popup/item_15/text = "rgb3x"
+popup/item_15/id = 15
+popup/item_16/text = "scan2x"
+popup/item_16/id = 16
+popup/item_17/text = "scan3x"
+popup/item_17/id = 17
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer8"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Cycles:"
+horizontal_alignment = 2
+
+[node name="CyclesOption" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+selected = 0
+fit_to_longest_item = false
+item_count = 9
+popup/item_0/text = "auto"
+popup/item_0/id = 0
+popup/item_1/text = "max"
+popup/item_1/id = 1
+popup/item_2/text = "80000"
+popup/item_2/id = 2
+popup/item_3/text = "90000"
+popup/item_3/id = 3
+popup/item_4/text = "100000"
+popup/item_4/id = 4
+popup/item_5/text = "110000"
+popup/item_5/id = 5
+popup/item_6/text = "120000"
+popup/item_6/id = 6
+popup/item_7/text = "130000"
+popup/item_7/id = 7
+popup/item_8/text = "140000"
+popup/item_8/id = 8
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Menu
+"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/FullscreenCheckButton" to="." method="_save"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/FulldoubleCheckButton" to="." method="_save"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/FullResolutionOption" to="." method="_save"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/WindowResolutionOption" to="." method="_save"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/OutputOption" to="." method="_save"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer6/AutolockCheckButton" to="." method="_save"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer7/ScalerOption" to="." method="_save"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer8/CyclesOption" to="." method="_save"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/BackButton" to="." method="_on_back_button_pressed"]

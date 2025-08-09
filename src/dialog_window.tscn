@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://brosekjr6c1jx"]
+
+[ext_resource type="PackedScene" uid="uid://bwby27ghs5osy" path="res://addons/window_system/windows/dialog_window.tscn" id="1_y4tx8"]
+[ext_resource type="Theme" uid="uid://03q268pfdt2r" path="res://src/themes/font_theme.tres" id="2_2noco"]
+
+[node name="DialogWindow" instance=ExtResource("1_y4tx8")]
+theme = ExtResource("2_2noco")
+minimize_style = "fade_out"
+focus_border_color = Color(0.721769, 0.192486, 0.510094, 1)
+panel_color = Color(0.361125, 0.271986, 0.234897, 1)
+panel_corner_radius = 0
